@@ -124,8 +124,14 @@
 
 .pl-completed-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
+}
+
+@media screen and (max-width: 1180px) and (min-width: 981px) {
+    .pl-completed-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .pl-archive {

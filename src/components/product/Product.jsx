@@ -6,7 +6,7 @@ const preparePreviewScroll = (event) => {
 
   if (!image) return;
 
-  const overflow = Math.max(0, image.scrollHeight - media.clientHeight);
+  const overflow = Math.max(0, image.getBoundingClientRect().height - media.clientHeight);
   media.style.setProperty("--preview-scroll", `${overflow}px`);
 };
 
@@ -39,15 +39,23 @@ const Product = ({
         product.img?.es ||
         product.img?.ru ||
         "";
+  const isScrollableDevelopment =
+    variant === "development" && product.previewMode === "fullpage";
 
   if (variant === "development") {
     return (
       <article className={classNames.join(" ")}>
-        <div className="p-dev-visual">
+        <div
+          className={`p-dev-visual${isScrollableDevelopment ? " p-dev-visual--scroll" : ""}`}
+          onMouseEnter={isScrollableDevelopment ? preparePreviewScroll : undefined}
+          tabIndex={isScrollableDevelopment ? 0 : undefined}
+          onFocus={isScrollableDevelopment ? preparePreviewScroll : undefined}
+          onClick={isScrollableDevelopment ? toggleTouchPreview : undefined}
+        >
           <img
             src={imageSrc}
             alt={`${product.title} preview`}
-            className="p-dev-img"
+            className={`p-dev-img${isScrollableDevelopment ? " p-dev-img--scroll" : ""}`}
             loading="lazy"
           />
         </div>
@@ -85,6 +93,7 @@ const Product = ({
           <div
             className="p-web-media"
             onMouseEnter={preparePreviewScroll}
+            tabIndex={0}
             onFocus={preparePreviewScroll}
             onClick={toggleTouchPreview}
           >
@@ -121,6 +130,7 @@ const Product = ({
         <div
           className="p-archive-media"
           onMouseEnter={preparePreviewScroll}
+          tabIndex={0}
           onFocus={preparePreviewScroll}
           onClick={toggleTouchPreview}
         >

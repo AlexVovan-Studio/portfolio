@@ -14,7 +14,7 @@ const ProductList = () => {
 
   const getProject = (id) => translatedProducts.find((item) => item.id === id);
   const currentBuilds = [10].map(getProject).filter(Boolean);
-  const completedProjects = [9, 2].map(getProject).filter(Boolean);
+  const completedProjects = [11, 9, 2].map(getProject).filter(Boolean);
   const archive = [3, 4, 5, 6].map(getProject).filter(Boolean);
 
   return (
@@ -57,7 +57,11 @@ const ProductList = () => {
                   <Product
                     key={item.id}
                     product={item}
-                    openLabel={t.projects.openProject}
+                    openLabel={
+                      item.linkType === "github"
+                        ? t.projects.viewCodeGithub
+                        : t.projects.openProject
+                    }
                     variant="web-feature"
                     contextLabel={item.status || t.projects.diplomaLabel}
                     language={language}

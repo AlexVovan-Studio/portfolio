@@ -95,6 +95,7 @@ export const translations = {
         "Smaller course projects that show the foundation I started from: layout, responsive pages and JavaScript practice.",
       diplomaLabel: "Diploma project",
       openProject: "Open project",
+      viewCodeGithub: "View code on GitHub",
       items: {
         2: { description: "Diploma project: an online store for rhythmic gymnastics products." },
         3: { description: "Marketplace interface experiment with product filtering." },
@@ -106,6 +107,12 @@ export const translations = {
           tag: "Learning platform",
           description: "A published learning platform for structured Spanish and English courses from A0 to C1.",
           features: ["Spanish & English", "A0–C1 levels", "interactive lessons"],
+        },
+        11: {
+          status: "Published website",
+          tag: "Travel agency",
+          description: "A multilingual website for a travel agency, presenting services, destinations and personalized trip planning in Spanish, Russian and English.",
+          features: ["Spanish, Russian & English", "responsive website", "light & dark themes"],
         },
         10: {
           status: "In development",
@@ -242,6 +249,7 @@ export const translations = {
         "Proyectos de curso más pequeños que muestran la base con la que empecé: maquetación, páginas responsive y práctica de JavaScript.",
       diplomaLabel: "Proyecto final",
       openProject: "Abrir proyecto",
+      viewCodeGithub: "Ver código en GitHub",
       items: {
         2: { description: "Proyecto final: tienda online de productos para gimnasia rítmica." },
         3: { description: "Experimento de marketplace con filtrado de productos." },
@@ -253,6 +261,12 @@ export const translations = {
           tag: "Plataforma educativa",
           description: "Una plataforma publicada para aprender español e inglés de forma estructurada desde A0 hasta C1.",
           features: ["español e inglés", "niveles A0–C1", "lecciones interactivas"],
+        },
+        11: {
+          status: "Sitio publicado",
+          tag: "Agencia de viajes",
+          description: "Sitio multilingüe para una agencia de viajes que presenta servicios, destinos y planificación personalizada en español, ruso e inglés.",
+          features: ["español, ruso e inglés", "sitio responsive", "tema claro y oscuro"],
         },
         10: {
           status: "En desarrollo",
@@ -389,6 +403,7 @@ export const translations = {
         "Небольшие учебные проекты, которые показывают мою базу: вёрстку, адаптивные страницы и практику JavaScript.",
       diplomaLabel: "Дипломный проект",
       openProject: "Открыть проект",
+      viewCodeGithub: "Посмотреть код на GitHub",
       items: {
         2: { description: "Дипломный проект: интернет-магазин товаров для художественной гимнастики." },
         3: { description: "Эксперимент marketplace-интерфейса с фильтрацией товаров." },
@@ -400,6 +415,12 @@ export const translations = {
           tag: "Учебная платформа",
           description: "Опубликованная платформа для последовательного изучения испанского и английского языков по уровням от A0 до C1.",
           features: ["испанский и английский", "уровни A0–C1", "интерактивные уроки"],
+        },
+        11: {
+          status: "Опубликованный сайт",
+          tag: "Туристическая компания",
+          description: "Многоязычный сайт туристической компании с презентацией услуг, направлений и персонального планирования поездок на испанском, русском и английском языках.",
+          features: ["испанский, русский и английский", "адаптивный сайт", "светлая и тёмная темы"],
         },
         10: {
           status: "В разработке",

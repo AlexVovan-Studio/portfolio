@@ -74,12 +74,36 @@
     transition: transform 0.4s ease, filter 0.3s ease;
 }
 
+.p-dev-visual--scroll {
+    aspect-ratio: 16 / 9;
+}
+
+.p-dev-img--scroll {
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.8s ease, filter 0.3s ease;
+    will-change: transform;
+}
+
 .app--dark .p-dev-img {
     filter: brightness(0.93) saturate(0.96);
 }
 
-.p--development:hover .p-dev-img {
+.p--development:hover .p-dev-img:not(.p-dev-img--scroll) {
     transform: scale(1.012);
+}
+
+.p-dev-visual--scroll:focus-visible .p-dev-img--scroll,
+.p-dev-visual--scroll.is-previewing .p-dev-img--scroll {
+    transform: translateY(calc(-1 * var(--preview-scroll, 0px)));
+    transition-duration: 7s;
+    transition-timing-function: linear;
 }
 
 .p-dev-copy {
@@ -219,7 +243,7 @@
     font-size: 14px;
 }
 
-.p-web-link:hover .p-web-img {
+.p-web-media:focus-visible .p-web-img {
     transform: translateY(calc(-1 * var(--preview-scroll, 0px)));
     transition-duration: 7s;
     transition-timing-function: linear;
@@ -340,7 +364,7 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.p-archive-link:hover .p-archive-img {
+.p-archive-media:focus-visible .p-archive-img {
     transform: translateY(calc(-1 * var(--preview-scroll, 0px)));
     transition-duration: 6s;
     transition-timing-function: linear;
@@ -357,19 +381,32 @@
     }
 }
 
-@media (hover: none), (pointer: coarse) {
-    .p-web-link:hover .p-web-img,
-    .p-archive-link:hover .p-archive-img {
-        transform: translateY(0);
-        transition-duration: 0.3s;
+@media (hover: hover) and (pointer: fine) {
+    .p-dev-visual--scroll:hover .p-dev-img--scroll,
+    .p-web-media:hover .p-web-img,
+    .p-archive-media:hover .p-archive-img {
+        transform: translateY(calc(-1 * var(--preview-scroll, 0px)));
+        transition-duration: 7s;
+        transition-timing-function: linear;
     }
+}
 
+.p-dev-visual--scroll:focus-visible,
+.p-web-media:focus-visible,
+.p-archive-media:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: -3px;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .p-dev-visual--scroll,
     .p-web-media,
     .p-archive-media {
         cursor: pointer;
         touch-action: manipulation;
     }
 
+    .p-dev-visual--scroll::after,
     .p-web-media::after,
     .p-archive-media::after {
         content: "↕";
