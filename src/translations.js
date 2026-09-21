@@ -114,6 +114,11 @@ export const translations = {
           description: "A multilingual website for a travel agency, presenting services, destinations and personalized trip planning in Spanish, Russian and English.",
           features: ["Spanish, Russian & English", "responsive website", "light & dark themes"],
         },
+        12: {
+          status: "Completed project",
+          tag: "Music platform",
+          description: "The official IDNT music platform with releases, track playback and information about the artist.",
+        },
         10: {
           status: "In development",
           tag: "Automotive website",
@@ -268,6 +273,11 @@ export const translations = {
           description: "Sitio multilingüe para una agencia de viajes que presenta servicios, destinos y planificación personalizada en español, ruso e inglés.",
           features: ["español, ruso e inglés", "sitio responsive", "tema claro y oscuro"],
         },
+        12: {
+          status: "Proyecto terminado",
+          tag: "Plataforma musical",
+          description: "La plataforma musical oficial de IDNT con lanzamientos, reproducción de canciones e información sobre el artista.",
+        },
         10: {
           status: "En desarrollo",
           tag: "Web de automoción",
@@ -421,6 +431,11 @@ export const translations = {
           tag: "Туристическая компания",
           description: "Многоязычный сайт туристической компании с презентацией услуг, направлений и персонального планирования поездок на испанском, русском и английском языках.",
           features: ["испанский, русский и английский", "адаптивный сайт", "светлая и тёмная темы"],
+        },
+        12: {
+          status: "Завершённый проект",
+          tag: "Музыкальная платформа",
+          description: "Официальная музыкальная платформа IDNT с релизами, прослушиванием треков и информацией об исполнителе.",
         },
         10: {
           status: "В разработке",

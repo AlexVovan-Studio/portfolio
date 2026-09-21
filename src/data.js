@@ -1,5 +1,14 @@
 export const products = [
     {
+        id: 12,
+        img: "/project-screens/idnt-full.jpg",
+        link: "https://idntmusic.com/",
+        title: "IDNT",
+        tag: "Music platform",
+        kind: "web",
+        description: "The official IDNT music platform with releases, track playback and information about the artist.",
+    },
+    {
         id: 2,
         img: "https://i.ibb.co/BNcD42t/R-Gym.png",
         link: "https://github.com/Alehnovich-Vladimir/R_Gym-Store",
