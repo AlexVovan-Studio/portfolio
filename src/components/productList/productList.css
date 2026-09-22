@@ -59,7 +59,7 @@
 }
 
 .pl-current {
-    margin-top: 8px;
+    margin-top: 40px;
 }
 
 .pl-section-title {
@@ -104,18 +104,18 @@
 
 .pl-current-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 22px;
 }
 
 .pl-current-grid--single {
-    grid-template-columns: minmax(0, calc((100% - 22px) / 2));
+    grid-template-columns: minmax(0, 1fr);
     justify-content: center;
 }
 
 .pl-lower-grid {
     display: block;
-    margin-top: 48px;
+    margin-top: 0;
 }
 
 .pl-completed {
@@ -124,23 +124,18 @@
 
 .pl-completed-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
 
-@media screen and (max-width: 1180px) and (min-width: 981px) {
-    .pl-completed-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
 .pl-archive {
-    margin-top: 46px;
+    margin-top: 40px;
 }
 
 .pl-archive-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 22px;
 }
 
@@ -199,8 +194,8 @@
         gap: 16px;
     }
 
-    .pl-lower-grid {
-        margin-top: 36px;
+    .pl-current {
+        margin-top: 32px;
     }
 
     .pl-archive {

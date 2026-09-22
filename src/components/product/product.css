@@ -37,6 +37,9 @@
 
 /* Projects currently in development */
 .p--development {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 20px;
@@ -148,7 +151,7 @@
     background: rgba(255,255,255,0.03);
 }
 
-/* Completed diploma project */
+/* Completed projects */
 .p--web-feature {
     overflow: hidden;
     border: 1px solid var(--line);
@@ -164,12 +167,14 @@
 }
 
 .p-web-link {
+    height: 100%;
     display: flex;
     flex-direction: column;
     min-height: 0;
 }
 
 .p-web-media {
+    flex-shrink: 0;
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
@@ -222,25 +227,28 @@
 }
 
 .p-open {
+    flex-shrink: 0;
+    margin-top: auto;
     width: fit-content;
     min-height: 40px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    border: 1px solid rgba(74, 175, 105, 0.3);
+    border: 1px solid #7c2cff;
     border-radius: 10px;
     padding: 0 13px;
-    color: #3a9e58;
-    font-size: 11px;
+    color: #7c2cff;
+    font-size: 14px;
     font-weight: 720;
 }
 
 .app--dark .p-open {
-    color: #68d88a;
+    border-color: #9e5bff;
+    color: #9e5bff;
 }
 
 .p-open-icon {
-    font-size: 14px;
+    font-size: 17px;
 }
 
 .p-web-media:focus-visible .p-web-img {
@@ -249,15 +257,16 @@
     transition-timing-function: linear;
 }
 
-/* Early projects: deliberately larger so the actual work is visible */
+/* Compact study project list */
 .p--archive {
     min-width: 0;
 }
 
 .p-archive-link {
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    align-items: center;
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -304,11 +313,12 @@
 }
 
 .p-archive-copy {
+    position: relative;
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 9px;
-    padding: 17px 18px 19px;
+    padding: 18px 220px 18px 24px;
 }
 
 .p-archive-title-row {
@@ -344,7 +354,21 @@
 }
 
 .p-mobile-open {
-    display: none;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    max-width: 180px;
+    color: #3f9f5d;
+    font-size: 12px;
+    font-weight: 680;
+}
+
+.app--dark .p-mobile-open {
+    color: #70d98e;
 }
 
 .p-archive-arrow {
@@ -493,8 +517,34 @@
         min-height: 0;
     }
 
+    .p--development {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .p-archive-link {
+        grid-template-columns: 112px minmax(0, 1fr);
+        padding: 12px;
+        gap: 14px;
+        align-items: start;
+    }
+
+    .p-archive-media {
+        border-radius: 8px;
+    }
+
     .p-archive-copy {
-        padding: 15px 16px 17px;
+        padding: 0;
+        gap: 7px;
+    }
+
+    .p-archive-title-row {
+        flex-wrap: wrap;
+        gap: 5px 10px;
+    }
+
+    .p-mobile-open {
+        position: static;
+        transform: none;
     }
 
     .p-archive-copy h4 {

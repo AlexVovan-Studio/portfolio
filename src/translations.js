@@ -115,7 +115,7 @@ export const translations = {
           features: ["Spanish, Russian & English", "responsive website", "light & dark themes"],
         },
         12: {
-          status: "Completed project",
+          status: "Published website",
           tag: "Music platform",
           description: "The official IDNT music platform with releases, track playback and information about the artist.",
         },
@@ -274,7 +274,7 @@ export const translations = {
           features: ["español, ruso e inglés", "sitio responsive", "tema claro y oscuro"],
         },
         12: {
-          status: "Proyecto terminado",
+          status: "Sitio publicado",
           tag: "Plataforma musical",
           description: "La plataforma musical oficial de IDNT con lanzamientos, reproducción de canciones e información sobre el artista.",
         },
@@ -433,7 +433,7 @@ export const translations = {
           features: ["испанский, русский и английский", "адаптивный сайт", "светлая и тёмная темы"],
         },
         12: {
-          status: "Завершённый проект",
+          status: "Опубликованный сайт",
           tag: "Музыкальная платформа",
           description: "Официальная музыкальная платформа IDNT с релизами, прослушиванием треков и информацией об исполнителе.",
         },

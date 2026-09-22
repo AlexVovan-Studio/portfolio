@@ -28,23 +28,6 @@ const ProductList = () => {
           <p>{t.projects.description}</p>
         </header>
 
-        <section className="pl-current">
-          <div className="pl-section-title pl-section-title--current">
-            <span aria-hidden="true">ϟ</span>
-            <h3>{t.projects.currentTitle}</h3>
-          </div>
-          <div className={`pl-current-grid${currentBuilds.length === 1 ? " pl-current-grid--single" : ""}`}>
-            {currentBuilds.map((item) => (
-              <Product
-                key={item.id}
-                product={item}
-                variant="development"
-                language={language}
-              />
-            ))}
-          </div>
-        </section>
-
         <div className="pl-lower-grid">
           {completedProjects.length > 0 && (
             <section className="pl-completed">
@@ -71,6 +54,23 @@ const ProductList = () => {
             </section>
           )}
 
+          <section className="pl-current">
+            <div className="pl-section-title pl-section-title--current">
+              <span aria-hidden="true">ϟ</span>
+              <h3>{t.projects.currentTitle}</h3>
+            </div>
+            <div className={`pl-current-grid${currentBuilds.length === 1 ? " pl-current-grid--single" : ""}`}>
+              {currentBuilds.map((item) => (
+                <Product
+                  key={item.id}
+                  product={item}
+                  variant="development"
+                  language={language}
+                />
+              ))}
+            </div>
+          </section>
+
           <section className="pl-archive">
             <div className="pl-section-title pl-section-title--archive">
               <span aria-hidden="true">ϟ</span>
@@ -81,7 +81,11 @@ const ProductList = () => {
                 <Product
                   key={item.id}
                   product={item}
-                  openLabel={t.projects.openProject}
+                  openLabel={
+                    item.linkType === "github"
+                      ? t.projects.viewCodeGithub
+                      : t.projects.openProject
+                  }
                   variant="archive"
                 />
               ))}
