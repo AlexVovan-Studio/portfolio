@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
 import "./App.css";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
@@ -13,6 +13,13 @@ const App = () => {
   const theme = useContext(ThemeContext);
   const { t } = useContext(LanguageContext);
   const darkMode = theme.state.darkMode;
+
+  useLayoutEffect(() => {
+    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
+    return () => {
+      delete document.documentElement.dataset.theme;
+    };
+  }, [darkMode]);
 
   return (
     <div className={`app ${darkMode ? "app--dark" : "app--light"}`}>

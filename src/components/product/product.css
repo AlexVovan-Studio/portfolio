@@ -91,7 +91,6 @@
     object-fit: cover;
     object-position: top center;
     transition: transform 0.8s ease, filter 0.3s ease;
-    will-change: transform;
 }
 
 .app--dark .p-dev-img {
@@ -194,7 +193,6 @@
     object-position: top center;
     transform: translateY(0);
     transition: transform 0.8s ease, filter 0.3s ease;
-    will-change: transform;
 }
 
 .app--dark .p-web-img {
@@ -304,7 +302,6 @@
     object-position: top center;
     transform: translateY(0);
     transition: transform 0.75s ease, filter 0.3s ease;
-    will-change: transform;
 }
 
 .app--dark .p-archive-img {

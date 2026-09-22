@@ -1,5 +1,18 @@
 :root {
   scroll-behavior: smooth;
+  color-scheme: light;
+  --page-background: #f7fafc;
+  background-color: var(--page-background);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #05131f;
+}
+
+body,
+#root {
+  background-color: var(--page-background);
 }
 
 .app {
@@ -39,7 +52,8 @@
   background:
     radial-gradient(circle at 13% 5%, rgba(53, 124, 166, 0.13), transparent 28%),
     radial-gradient(circle at 86% 28%, rgba(102, 83, 190, 0.07), transparent 29%),
-    linear-gradient(180deg, #071725 0%, #061522 48%, #05131f 100%);
+    linear-gradient(180deg, #071725 0%, #061522 48%, #05131f 100%),
+    var(--page-background);
 }
 
 .app main {
