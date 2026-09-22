@@ -257,16 +257,15 @@
     transition-timing-function: linear;
 }
 
-/* Compact study project list */
+/* Early projects: deliberately larger so the actual work is visible */
 .p--archive {
     min-width: 0;
 }
 
 .p-archive-link {
-    min-height: 0;
-    display: grid;
-    grid-template-columns: 200px minmax(0, 1fr);
-    align-items: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -313,12 +312,11 @@
 }
 
 .p-archive-copy {
-    position: relative;
     min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 9px;
-    padding: 18px 220px 18px 24px;
+    padding: 17px 18px 19px;
 }
 
 .p-archive-title-row {
@@ -354,21 +352,7 @@
 }
 
 .p-mobile-open {
-    position: absolute;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    max-width: 180px;
-    color: #3f9f5d;
-    font-size: 12px;
-    font-weight: 680;
-}
-
-.app--dark .p-mobile-open {
-    color: #70d98e;
+    display: none;
 }
 
 .p-archive-arrow {
@@ -377,7 +361,7 @@
     display: grid;
     place-items: center;
     border-radius: 9px;
-    background: rgba(7, 23, 37, 0.84);
+    background: #7c2cff;
     color: #fff;
     font-size: 13px;
     position: absolute;
@@ -470,13 +454,13 @@
         align-items: center;
         gap: 7px;
         margin-top: 3px;
-        color: #3f9f5d;
+        color: #7c2cff;
         font-size: 12px;
         font-weight: 680;
     }
 
     .app--dark .p-mobile-open {
-        color: #70d98e;
+        color: #9e5bff;
     }
 }
 
@@ -521,30 +505,8 @@
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .p-archive-link {
-        grid-template-columns: 112px minmax(0, 1fr);
-        padding: 12px;
-        gap: 14px;
-        align-items: start;
-    }
-
-    .p-archive-media {
-        border-radius: 8px;
-    }
-
     .p-archive-copy {
-        padding: 0;
-        gap: 7px;
-    }
-
-    .p-archive-title-row {
-        flex-wrap: wrap;
-        gap: 5px 10px;
-    }
-
-    .p-mobile-open {
-        position: static;
-        transform: none;
+        padding: 15px 16px 17px;
     }
 
     .p-archive-copy h4 {

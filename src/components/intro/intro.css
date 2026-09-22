@@ -163,6 +163,16 @@
     box-shadow: 0 16px 36px rgba(25, 51, 69, 0.12);
 }
 
+.i-action:not(.primary) {
+    border-color: #7c2cff;
+    color: #7c2cff;
+}
+
+.app--dark .i-action:not(.primary) {
+    border-color: #9e5bff;
+    color: #9e5bff;
+}
+
 .i-action.primary {
     border-color: transparent;
     background: linear-gradient(135deg, #4fad62, #4b9fca);

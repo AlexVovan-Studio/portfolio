@@ -213,11 +213,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--line);
+    border: 1px solid #7c2cff;
     border-radius: 9px;
     padding: 0 13px;
     background: rgba(255,255,255,0.52);
-    color: var(--text);
+    color: #7c2cff;
     font-size: 12.5px;
     font-weight: 800;
     text-decoration: none;
@@ -225,21 +225,23 @@
 }
 
 .app--dark .apps-action {
+    color: #9e5bff;
+    border-color: #9e5bff;
     background: rgba(10, 29, 46, 0.72);
 }
 
 .apps-action:hover {
     transform: translateY(-2px);
-    border-color: rgba(85,168,223,0.4);
+    border-color: #9e5bff;
 }
 
 .apps-action--primary {
-    border-color: rgba(74, 176, 101, 0.34);
-    color: #31954b;
+    border-color: #7c2cff;
+    color: #7c2cff;
 }
 
 .app--dark .apps-action--primary {
-    color: #65d481;
+    color: #9e5bff;
 }
 
 .apps-device {
