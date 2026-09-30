@@ -149,6 +149,10 @@
     background: linear-gradient(145deg, #e7932f, #c76b24);
 }
 
+.apps-list-icon.my-chatsense {
+    background: linear-gradient(145deg, #1d8fff, #18d98f);
+}
+
 .apps-list-copy {
     min-width: 0;
     display: flex;
@@ -171,6 +175,10 @@
 
 .apps-list-item:nth-child(2) .apps-list-copy small {
     color: #d89632;
+}
+
+.apps-list-item:nth-child(3) .apps-list-copy small {
+    color: #22bfa0;
 }
 
 .apps-list-arrow {

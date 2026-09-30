@@ -3,6 +3,12 @@ import { LanguageContext } from "../../context";
 import { apps } from "../../data";
 import "./mobileApps.css";
 
+const appIcons = {
+  "my-route": "⌖",
+  "my-photobook": "▣",
+  "my-chatsense": "↔",
+};
+
 const MobileApps = () => {
   const { language, t } = useContext(LanguageContext);
   const [activeId, setActiveId] = useState(apps[0].id);
@@ -64,7 +70,7 @@ const MobileApps = () => {
                   onClick={() => setActiveId(app.id)}
                 >
                   <span className={`apps-list-icon ${app.id}`} aria-hidden="true">
-                    {app.id === "my-route" ? "⌖" : "▣"}
+                    {appIcons[app.id] || "•"}
                   </span>
                   <span className="apps-list-copy">
                     <strong>{app.name}</strong>

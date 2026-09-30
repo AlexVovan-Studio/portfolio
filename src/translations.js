@@ -21,7 +21,7 @@ export const translations = {
       workButton: "View work",
       stats: [
         { value: "1", label: "Android app live" },
-        { value: "2", label: "mobile products" },
+        { value: "3", label: "mobile products" },
         { value: "iOS", label: "next target" },
       ],
       floatingGoogle: "Google Play",
@@ -47,7 +47,7 @@ export const translations = {
       kicker: "Mobile development",
       title: "Mobile products",
       description:
-        "My Android apps for travel and creating photo albums. My Route is available on Google Play; My PhotoBook is in closed testing.",
+        "My Android apps for travel, photo albums and multilingual WhatsApp communication. My Route is available on Google Play; My PhotoBook and MyChatSense are being tested.",
       tabsLabel: "Mobile apps",
       previewLabel: "preview",
       liveBuild: "Live build",
@@ -72,6 +72,15 @@ export const translations = {
           features: ["photo albums", "PDF export", "print layouts"],
           screenTitle: "Summer album",
           screenMeta: "24 photos  PDF ready",
+        },
+        "my-chatsense": {
+          status: "Internal testing on Google Play",
+          platform: "Android",
+          summary:
+            "An Android companion for selected WhatsApp chats that translates incoming messages and helps prepare replies in the other person's language.",
+          features: ["WhatsApp chat translation", "voice transcription", "11 languages"],
+          screenTitle: "Translated chat",
+          screenMeta: "11 languages  voice input",
         },
       },
     },
@@ -180,7 +189,7 @@ export const translations = {
       workButton: "Ver trabajos",
       stats: [
         { value: "1", label: "app Android publicada" },
-        { value: "2", label: "productos móviles" },
+        { value: "3", label: "productos móviles" },
         { value: "iOS", label: "siguiente objetivo" },
       ],
       floatingGoogle: "Google Play",
@@ -206,7 +215,7 @@ export const translations = {
       kicker: "Desarrollo móvil",
       title: "Productos móviles",
       description:
-        "Mis aplicaciones Android para viajes y creación de álbumes. My Route está en Google Play; My PhotoBook está en pruebas cerradas.",
+        "Mis aplicaciones Android para viajes, fotolibros y comunicación multilingüe en WhatsApp. My Route está en Google Play; My PhotoBook y MyChatSense están en fase de pruebas.",
       tabsLabel: "Apps móviles",
       previewLabel: "vista previa",
       liveBuild: "Versión activa",
@@ -231,6 +240,15 @@ export const translations = {
           features: ["álbumes de fotos", "exportación PDF", "diseños imprimibles"],
           screenTitle: "Álbum de verano",
           screenMeta: "24 fotos  PDF listo",
+        },
+        "my-chatsense": {
+          status: "Pruebas internas en Google Play",
+          platform: "Android",
+          summary:
+            "Una app Android para chats seleccionados de WhatsApp que traduce los mensajes recibidos y ayuda a preparar respuestas en el idioma del interlocutor.",
+          features: ["traducción de chats de WhatsApp", "transcripción de voz", "11 idiomas"],
+          screenTitle: "Chat traducido",
+          screenMeta: "11 idiomas  entrada por voz",
         },
       },
     },
@@ -339,7 +357,7 @@ export const translations = {
       workButton: "Смотреть работы",
       stats: [
         { value: "1", label: "Android-приложение опубликовано" },
-        { value: "2", label: "мобильных продукта" },
+        { value: "3", label: "мобильных продукта" },
         { value: "iOS", label: "следующая цель" },
       ],
       floatingGoogle: "Google Play",
@@ -365,7 +383,7 @@ export const translations = {
       kicker: "Мобильная разработка",
       title: "Мобильные продукты",
       description:
-        "Мои Android-приложения для путешествий и создания фотоальбомов. My Route опубликован в Google Play, My PhotoBook проходит закрытое тестирование.",
+        "Мои Android-приложения для путешествий, фотокниг и многоязычного общения в WhatsApp. My Route опубликован в Google Play, My PhotoBook и MyChatSense проходят тестирование.",
       tabsLabel: "Мобильные приложения",
       previewLabel: "превью",
       liveBuild: "Живая версия",
@@ -390,6 +408,15 @@ export const translations = {
           features: ["фотоальбомы", "экспорт PDF", "макеты для печати"],
           screenTitle: "Летний альбом",
           screenMeta: "24 фото  PDF готов",
+        },
+        "my-chatsense": {
+          status: "Внутреннее тестирование в Google Play",
+          platform: "Android",
+          summary:
+            "Android-приложение для выбранных WhatsApp-чатов: переводит входящие сообщения и помогает подготовить ответ на языке собеседника.",
+          features: ["перевод WhatsApp-чатов", "расшифровка голоса", "11 языков"],
+          screenTitle: "Переведённый чат",
+          screenMeta: "11 языков  голосовой ввод",
         },
       },
     },
