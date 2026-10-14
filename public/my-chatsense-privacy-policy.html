@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective October 7, 2026." />
+  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective October 14, 2026." />
   <meta name="robots" content="index, follow" />
   <title>Privacy Policy - MyChatSense</title>
   <link rel="canonical" href="https://portfolio-alexvovan.vercel.app/my-chatsense-privacy-policy.html" />
@@ -162,9 +162,9 @@
     <article class="card">
       <h1>Privacy Policy for MyChatSense</h1>
 
-      <p class="updated"><strong>Effective date:</strong> October 7, 2026</p>
+      <p class="updated"><strong>Effective date:</strong> October 14, 2026</p>
 
-      <p>MyChatSense (“the App”) is an Android companion app that helps users read and reply to WhatsApp conversations in another language. This Privacy Policy explains what information the App accesses, how it is processed, when it leaves the device, and what choices users have.</p>
+      <p>MyChatSense (“the App”) is an Android companion app that helps users read and reply to WhatsApp conversations in another language and optionally save selected words, phrases, or sentences for language learning and practice. This Privacy Policy explains what information the App accesses, how it is processed, when it leaves the device, and what choices users have.</p>
 
       <h2>1. Scope</h2>
 
@@ -182,13 +182,14 @@
   <li>reading the visible content of a WhatsApp or WhatsApp Business chat that the user opens or selects;</li>
   <li>identifying the selected chat and visible message authors;</li>
   <li>synchronizing visible messages into MyChatSense;</li>
-  <li>reading visible message text, replies, quotes, reactions, media labels/captions, document names or other visible message-related text;</li>
+  <li>reading visible message text, replies, quotes, reactions, media labels/captions, document names, or other visible message-related text;</li>
   <li>reading WhatsApp-generated voice-message transcription when that transcription is visible on screen;</li>
+  <li>allowing the user to select and save words, phrases, or sentences from synchronized WhatsApp messages for optional language learning and practice;</li>
   <li>inserting a translated reply into the appropriate WhatsApp text field; and</li>
   <li>returning the user to MyChatSense after the user manually sends the message.</li>
 </ul>
 
-      <p>MyChatSense does <strong>not</strong> automatically press the WhatsApp Send button. The final send action remains under the user’s control.</p>
+      <p>MyChatSense does not automatically press the WhatsApp Send button. The final send action remains under the user’s control.</p>
 
       <h2>3. Information Stored Locally on the Device</h2>
 
@@ -209,6 +210,19 @@
   <li>the original text of the user’s own outgoing messages.</li>
 </ul>
 
+      <p>Optional Learning and Practice features may also store information locally on the device, including:</p>
+
+      <ul>
+  <li>words, phrases, or sentences that the user chooses to save for study and their translations;</li>
+  <li>references to the source message needed to manage saved study items;</li>
+  <li>user-created learning folders and phrase-to-folder assignments;</li>
+  <li>practice and mastery progress;</li>
+  <li>review state;</li>
+  <li>exam history;</li>
+  <li>Daily Goal state; and</li>
+  <li>progress associated with the App’s learning companion characters.</li>
+</ul>
+
       <p>MyChatSense may also keep local technical diagnostics needed to troubleshoot the App. MyChatSense retains a bounded set of recent local diagnostic events. Diagnostics are not uploaded automatically. Diagnostic export is initiated manually by the user. A deliberately requested diagnostic screen snapshot may include visible text and should be reviewed before it is exported or shared.</p>
 
       <p>Android backup for MyChatSense is disabled. MyChatSense does not provide a cloud archive of the user’s full WhatsApp history.</p>
@@ -218,6 +232,8 @@
       <h2>4. Information Sent for Translation</h2>
 
       <p>When the user requests or triggers translation, the relevant text must leave the device.</p>
+
+      <p>This also applies when the user selects only part of a WhatsApp message for Learning and a translation of that selected fragment is needed. In that case, the selected fragment may be sent through the same translation flow described in this section.</p>
 
       <p>The App sends a request over HTTPS to the MyChatSense backend. A translation request may include:</p>
 
@@ -229,9 +245,11 @@
   <li>limited message-related metadata needed for contextual translation.</li>
 </ul>
 
-      <p>The current translation logic may use up to approximately eight previous textual messages as context.</p>
+      <p>The current translation logic may use up to eight previous textual messages as context.</p>
 
-      <p>Sender information may initially contain a WhatsApp display name or, for an unsaved contact, a phone number as shown by WhatsApp. Before conversation context is sent onward to the AI translation provider, the MyChatSense backend replaces participant identifiers with neutral labels such as <code>S1</code>, <code>S2</code>, and similar pseudonymous identifiers.</p>
+      <p>Sender information may initially contain a WhatsApp display name or, for an unsaved contact, a phone number as shown by WhatsApp. Before conversation context is sent onward to the AI translation provider, the MyChatSense backend replaces participant identifiers with neutral labels such as S1, S2, and similar pseudonymous identifiers.</p>
+
+      <p>For translation of a selected Learning fragment, conversation context may be omitted when it is not needed for that request.</p>
 
       <h2>5. AI Translation Provider</h2>
 
@@ -255,7 +273,7 @@
 
       <p>Technical infrastructure may also process ordinary network and operational metadata necessary to provide, secure, and troubleshoot the service.</p>
 
-      <h2>7. Photos, Videos, Documents, Voice Messages, and Dictation</h2>
+      <h2>7. Photos, Videos, Documents, Voice Messages, Dictation, and Speech Features</h2>
 
       <p>MyChatSense does not upload the underlying WhatsApp binary media file merely because a selected chat contains a photo, video, PDF, or voice message.</p>
 
@@ -271,7 +289,9 @@
 
       <p>For WhatsApp voice messages, MyChatSense reads the visible transcription text when available; it does not send the raw WhatsApp voice-message audio to the MyChatSense translation backend.</p>
 
-      <p>If the user chooses voice dictation for a reply, speech recognition is provided through Android/system speech-recognition functionality. MyChatSense receives the recognized text for translation. Processing performed by the device’s speech-recognition provider is subject to that provider’s own privacy practices.</p>
+      <p>If the user chooses voice dictation for a reply or starts a spoken Learning or Practice exercise, speech recognition is provided through Android/system speech-recognition functionality. MyChatSense receives the recognized text for translation, practice, or answer evaluation. MyChatSense does not save the raw microphone audio as an audio file. Processing performed by the device’s speech-recognition provider is subject to that provider’s own privacy practices.</p>
+
+      <p>For pronunciation and spoken prompts in Learning and Practice, text may be passed to the Android text-to-speech engine selected on the device. Depending on the text-to-speech engine configured by the user or device manufacturer, speech generation may occur on the device or may involve that provider’s service and is subject to that provider’s own privacy practices.</p>
 
       <h2>8. Service Providers</h2>
 
@@ -294,7 +314,13 @@
 
       <h2>10. User Choices and Deletion</h2>
 
-      <p>Users control which WhatsApp chats are added to MyChatSense. Removing a chat from MyChatSense removes its displayed local message history, translation cache, per-chat language and display settings, and synchronization state. It does not delete messages from WhatsApp. Original texts of outgoing messages created through MyChatSense, together with information needed to match them to the conversation, remain stored locally so they can be restored if the chat is added again. Local diagnostic records may also remain until they are manually cleared or replaced by newer records. To remove data stored in the App’s private storage, clear its storage in Android settings or uninstall the App. Diagnostic files exported to another location, or copies shared with others, are outside the App’s private storage and must be removed separately.</p>
+      <p>Users control which WhatsApp chats are added to MyChatSense. Removing a chat from MyChatSense removes its displayed local message history, translation cache, per-chat language and display settings, and synchronization state. It does not delete messages from WhatsApp.</p>
+
+      <p>Original texts of outgoing messages created through MyChatSense, together with information needed to match them to the conversation, remain stored locally so they can be restored if the chat is added again. Local diagnostic records may also remain until they are manually cleared or replaced by newer records.</p>
+
+      <p>Saved learning phrases can be removed individually in the App. The App also provides a Learning reset in its diagnostics tools. This reset removes saved learning phrases, learning folders, practice progress, exam history, Daily Goal state, and learning-companion progress while leaving WhatsApp chat data, completed chat translations, and general App settings unchanged.</p>
+
+      <p>To remove data stored in the App’s private storage, clear its storage in Android settings or uninstall the App. Diagnostic files exported to another location, or copies shared with others, are outside the App’s private storage and must be removed separately.</p>
 
       <p>Because MyChatSense does not require a user account, there is no MyChatSense account profile to delete.</p>
 
