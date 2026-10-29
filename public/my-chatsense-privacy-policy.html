@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective October 16, 2026." />
+  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective October 29, 2026." />
   <meta name="robots" content="index, follow" />
   <title>Privacy Policy - MyChatSense</title>
   <link rel="canonical" href="https://portfolio-alexvovan.vercel.app/my-chatsense-privacy-policy.html" />
@@ -162,7 +162,7 @@
     <article class="card">
       <h1>Privacy Policy for MyChatSense</h1>
 
-      <p class="updated"><strong>Effective date:</strong> October 16, 2026</p>
+      <p class="updated"><strong>Effective date:</strong> October 29, 2026</p>
 
       <p>MyChatSense (“the App”) is an Android companion app that helps users read and reply to WhatsApp conversations in another language and optionally save selected words, phrases, or sentences for language learning and practice. This Privacy Policy explains what information the App accesses, how it is processed, when it leaves the device, and what choices users have.</p>
 
@@ -190,6 +190,22 @@
 </ul>
 
       <p>MyChatSense does not automatically press the WhatsApp Send button. The final send action remains under the user’s control.</p>
+
+      <h2>2A. Optional Android Notification Access</h2>
+
+      <p>MyChatSense can optionally use Android's Notification Listener access to show which of the user's already selected WhatsApp or WhatsApp Business chats have new messages. This feature is not needed to translate messages using Accessibility. The user explicitly enables or revokes Notification Access in Android system settings.</p>
+
+      <p><strong>Scope of Android permission:</strong> Android's Notification Access permission technically permits a notification-listener service to receive notifications from other installed applications. MyChatSense's notification-listener implementation filters events to WhatsApp and WhatsApp Business. It ignores group-summary and ongoing notifications and processes only notification metadata needed to match an already selected chat, namely:</p>
+
+      <ul>
+        <li>the source application (WhatsApp or WhatsApp Business);</li>
+        <li>the conversation/chat title, notification title, and notification subtitle (which can include a person's name, phone number, or chat name); and</li>
+        <li>whether the notification corresponds to a chat the user has added to MyChatSense.</li>
+      </ul>
+
+      <p>The Notification Listener <strong>does not extract or save the message body or notification preview for translation or chat-history synchronization</strong>. A notification creates a local pending-chat indicator; it does not import message contents. The App reads visible messages later through Accessibility when the user opens that selected conversation in WhatsApp, including during a user-initiated catch-up synchronization.</p>
+
+      <p>MyChatSense stores the pending-chat flag and revision locally. Recent on-device diagnostic events may also include notification titles, conversation names and source-package information so that notification matching can be troubleshot. Notification-derived metadata and these diagnostics are not automatically uploaded to the MyChatSense backend. The optional in-app launcher badge may use an Android notification that indicates new activity in selected chats, without displaying message contents. Users may disable Notification Access in Android settings and may clear local diagnostics using the App's diagnostic controls.</p>
 
       <h2>3. Information Stored Locally on the Device</h2>
 
