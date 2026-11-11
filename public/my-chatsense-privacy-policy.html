@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective November 4, 2026." />
+  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective November 11, 2026." />
   <meta name="robots" content="index, follow" />
   <title>Privacy Policy - MyChatSense</title>
   <link rel="canonical" href="https://portfolio-alexvovan.vercel.app/my-chatsense-privacy-policy.html" />
@@ -162,7 +162,7 @@
     <article class="card">
       <h1>Privacy Policy for MyChatSense</h1>
 
-      <p class="updated"><strong>Effective date:</strong> November 4, 2026</p>
+      <p class="updated"><strong>Effective date:</strong> November 11, 2026</p>
 
       <p>MyChatSense (“the App”) is an Android companion app that helps users read and reply to WhatsApp conversations in another language and optionally save selected words, phrases, or sentences for language learning and practice. This Privacy Policy explains what information the App accesses, how it is processed, when it leaves the device, and what choices users have.</p>
 
@@ -243,6 +243,8 @@
 
       <p>Android backup for MyChatSense is disabled. MyChatSense does not provide a cloud archive of the user’s full WhatsApp history.</p>
 
+      <p>When a user translates a selected photo or PDF, the App may cache the extracted original text, translated text, and page dimensions in private local storage. The cached results do not contain the original photo or PDF bytes. Results older than seven days are removed when accessed or during cache maintenance, not necessarily immediately when the seven days elapse. Users can also save a translated PDF to a location they choose outside the App’s private storage.</p>
+
       <p>Local data remains in the App’s private storage until it is removed using the App’s data-management features, Android’s clear-storage setting, or by uninstalling the App. Removing a chat from MyChatSense removes its displayed history and related caches and settings, but does not remove all retained source-memory and diagnostic records. Section 10 explains these limits and how to remove the remaining private data.</p>
 
       <h2>4. Information Sent for Translation</h2>
@@ -264,7 +266,7 @@
 
       <p>The current translation logic may use up to eight previous textual messages as context.</p>
 
-      <p>Sender information may initially contain a WhatsApp display name or, for an unsaved contact, a phone number as shown by WhatsApp. Before conversation context is sent onward to the AI translation provider, the MyChatSense backend replaces participant identifiers with neutral labels such as S1, S2, and similar pseudonymous identifiers.</p>
+      <p>Sender information may initially contain a WhatsApp display name or, for an unsaved contact, a phone number as shown by WhatsApp. Before conversation context is sent onward to the AI translation provider, the MyChatSense backend replaces participant labels with neutral labels such as S1, S2, and similar pseudonymous identifiers. Names, phone numbers, and other identifying information written within the message text itself are not automatically removed.</p>
 
       <p>For translation of a selected Learning fragment, conversation context may be omitted when it is not needed for that request.</p>
 
@@ -286,9 +288,11 @@
 
       <p>MyChatSense does not use the backend as a cloud message-history service.</p>
 
-      <p>A persistent operational usage ledger may store a daily request count for abuse and cost protection. This counter does not contain the text of WhatsApp conversations.</p>
+      <p>For abuse and cost protection, the backend stores short-lived per-minute and daily request counters. Per-client rate limiting uses a SHA-256 hash derived from the client network address. These counters do not contain WhatsApp message text or document images.</p>
 
-      <p>Technical infrastructure may also process ordinary network and operational metadata necessary to provide, secure, and troubleshoot the service.</p>
+      <p>For each user-initiated photo or PDF translation page, the App sends a random installation identifier (UUID) and a separate random request identifier to the MyChatSense backend. The installation identifier is not derived from a Google account, email, IMEI, advertising ID, or other hardware identifier. It is sent for document translation even while Premium usage enforcement is disabled; during the current free closed test, it is not used to charge a per-installation AI quota.</p>
+
+      <p>Technical infrastructure may also process IP addresses and ordinary network and operational metadata necessary to provide, secure, and troubleshoot the service.</p>
 
       <p>If the user voluntarily uses the in-app “Report a problem” feature, the App sends the text entered by the user to the MyChatSense backend together with limited technical context: the App version name and version code, Android SDK version, device manufacturer and model, and the App language. The report does not automatically attach WhatsApp conversation history, raw audio, or a diagnostic export.</p>
 
@@ -298,7 +302,11 @@
 
       <p>MyChatSense does not upload the underlying WhatsApp binary media file merely because a selected chat contains a photo, video, PDF, or voice message.</p>
 
-      <p>For these message types, the App may use only text that is visible in the WhatsApp interface, such as:</p>
+      <p><strong>Photo and PDF translation initiated by the user is different.</strong> When a user selects a photo or PDF in MyChatSense (including through Android’s Share menu) and taps Translate, the App converts the selected image or each PDF page into JPEG image data and sends it over HTTPS to the MyChatSense backend. The backend forwards the page image to OpenAI for text recognition and translation. Up to five PDF pages can be processed separately. The original PDF file is not uploaded as a PDF; its rendered page images are uploaded. Those images may contain personal or confidential information, so users should consider the contents before requesting translation.</p>
+
+      <p>The MyChatSense backend does not intentionally store uploaded document images as files. Extracted source text and translated text may be saved in the local cache described in Section 3. OpenAI’s processing and retention practices described in Section 5 apply to the transmitted images as well as text.</p>
+
+      <p>When synchronizing an already selected WhatsApp conversation through Accessibility, rather than translating a separately selected file, the App may use only text that is visible in the WhatsApp interface, such as:</p>
 
       <ul>
   <li>a caption;</li>
@@ -342,7 +350,7 @@
 
       <p>Saved learning phrases can be removed individually in the App. The App also provides a Learning reset in its diagnostics tools. This reset removes saved learning phrases, learning folders, practice progress, exam history, Daily Goal state, and learning-companion progress while leaving WhatsApp chat data, completed chat translations, and general App settings unchanged.</p>
 
-      <p>To remove data stored in the App’s private storage, clear its storage in Android settings or uninstall the App. Diagnostic files exported to another location, or copies shared with others, are outside the App’s private storage and must be removed separately.</p>
+      <p>To remove data stored in the App’s private storage, including cached photo/PDF translation results and the local installation identifier, clear its storage in Android settings or uninstall the App. Cached document results older than seven days are also removed when accessed or when the cache is pruned. Translated PDFs saved outside the App, diagnostic files exported to another location, or copies shared with others are outside the App’s private storage and must be removed separately.</p>
 
       <p>Because MyChatSense does not require a user account, there is no MyChatSense account profile to delete.</p>
 
