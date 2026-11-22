@@ -129,6 +129,12 @@
     gap: 22px;
 }
 
+.pl-completed-grid--odd > :last-child {
+    width: calc((100% - 22px) / 2);
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
 .pl-archive {
     margin-top: 40px;
 }
@@ -153,6 +159,11 @@
     .pl-completed-grid,
     .pl-archive-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pl-completed-grid--odd > :last-child {
+        width: 100%;
+        grid-column: auto;
     }
 
     .pl-current-grid--single {

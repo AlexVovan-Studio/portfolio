@@ -92,7 +92,7 @@ export const translations = {
       currentKicker: "In progress",
       currentTitle: "Currently building",
       currentDescription:
-        "KeyLab is still in development, so it is shown here as active work rather than a released website.",
+        "Projects that are still in development appear here before they are published.",
       webKicker: "Selected web work",
       webTitle: "Diploma project",
       webDescription:
@@ -129,10 +129,10 @@ export const translations = {
           description: "The official IDNT music platform with releases, track playback and information about the artist.",
         },
         10: {
-          status: "In development",
-          tag: "Automotive website",
-          description: "A business website for an automotive electronics workshop working with keys, immobilizers and electronic control units.",
-          features: ["automotive electronics", "keys & immobilizers", "service website"],
+          status: "Published website",
+          tag: "Automotive electronics",
+          description: "A published website for an automotive electronics workshop in Valencia, focused on car keys, immobilizers, electronic modules and diagnostics.",
+          features: ["automotive electronics", "keys & immobilizers", "business website"],
         },
       },
     },
@@ -260,7 +260,7 @@ export const translations = {
       currentKicker: "En desarrollo",
       currentTitle: "Proyectos actuales",
       currentDescription:
-        "KeyLab sigue en desarrollo, por eso aparece aquí como trabajo activo y no como un sitio ya publicado.",
+        "Los proyectos que todavía están en desarrollo aparecen aquí antes de publicarse.",
       webKicker: "Trabajo web seleccionado",
       webTitle: "Proyecto final",
       webDescription:
@@ -297,10 +297,10 @@ export const translations = {
           description: "La plataforma musical oficial de IDNT con lanzamientos, reproducción de canciones e información sobre el artista.",
         },
         10: {
-          status: "En desarrollo",
-          tag: "Web de automoción",
-          description: "Sitio web para un taller de electrónica del automóvil especializado en llaves, inmovilizadores y unidades electrónicas.",
-          features: ["electrónica del automóvil", "llaves e inmovilizadores", "web de servicios"],
+          status: "Sitio publicado",
+          tag: "Electrónica del automóvil",
+          description: "Sitio web publicado para un taller de electrónica del automóvil en Valencia, especializado en llaves, inmovilizadores, módulos electrónicos y diagnóstico.",
+          features: ["electrónica del automóvil", "llaves e inmovilizadores", "sitio web empresarial"],
         },
       },
     },
@@ -428,7 +428,7 @@ export const translations = {
       currentKicker: "В разработке",
       currentTitle: "Сейчас в работе",
       currentDescription:
-        "KeyLab пока находится в разработке, поэтому здесь он показан как текущая работа, а не как опубликованный сайт.",
+        "Проекты, которые ещё находятся в разработке, появляются здесь до публикации.",
       webKicker: "Избранная web-работа",
       webTitle: "Дипломный проект",
       webDescription:
@@ -465,10 +465,10 @@ export const translations = {
           description: "Официальная музыкальная платформа IDNT с релизами, прослушиванием треков и информацией об исполнителе.",
         },
         10: {
-          status: "В разработке",
-          tag: "Сайт автосервиса",
-          description: "Сайт для мастерской автомобильной электроники: ключи, иммобилайзеры, электронные блоки и связанные услуги.",
-          features: ["автоэлектроника", "ключи и иммобилайзеры", "сервисный сайт"],
+          status: "Опубликованный сайт",
+          tag: "Автоэлектроника",
+          description: "Опубликованный сайт мастерской автомобильной электроники в Валенсии: автомобильные ключи, иммобилайзеры, электронные блоки и диагностика.",
+          features: ["автоэлектроника", "ключи и иммобилайзеры", "сайт для бизнеса"],
         },
       },
     },

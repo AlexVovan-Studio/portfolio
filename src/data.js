@@ -74,12 +74,12 @@ export const products = [
     },
     {
         id: 10,
-        img: "/project-screens/keylab-full.webp",
-        previewMode: "fullpage",
-        title: "KeyLab",
-        tag: "Business website",
-        kind: "development",
-        description: "Website for an automotive electronics workshop focused on keys, immobilizers and electronic control units.",
+        img: "/project-screens/clauchip-full.webp",
+        link: "https://clauchip.es/",
+        title: "ClauChip",
+        tag: "Automotive website",
+        kind: "web",
+        description: "Published website for an automotive electronics workshop in Valencia, focused on car keys, immobilizers, electronic modules and diagnostics.",
     },
 ]
 

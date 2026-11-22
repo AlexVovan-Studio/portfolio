@@ -13,8 +13,7 @@ const ProductList = () => {
   }));
 
   const getProject = (id) => translatedProducts.find((item) => item.id === id);
-  const currentBuilds = [10].map(getProject).filter(Boolean);
-  const completedProjects = [12, 11, 9, 2].map(getProject).filter(Boolean);
+  const completedProjects = [12, 11, 9, 10, 2].map(getProject).filter(Boolean);
   const archive = [3, 4, 5, 6].map(getProject).filter(Boolean);
 
   return (
@@ -35,7 +34,7 @@ const ProductList = () => {
                 <span aria-hidden="true">✓</span>
                 <h3>{t.projects.completedTitle || t.projects.webTitle}</h3>
               </div>
-              <div className="pl-completed-grid">
+              <div className={`pl-completed-grid${completedProjects.length % 2 === 1 ? " pl-completed-grid--odd" : ""}`}>
                 {completedProjects.map((item) => (
                   <Product
                     key={item.id}
@@ -53,23 +52,6 @@ const ProductList = () => {
               </div>
             </section>
           )}
-
-          <section className="pl-current">
-            <div className="pl-section-title pl-section-title--current">
-              <span aria-hidden="true">ϟ</span>
-              <h3>{t.projects.currentTitle}</h3>
-            </div>
-            <div className={`pl-current-grid${currentBuilds.length === 1 ? " pl-current-grid--single" : ""}`}>
-              {currentBuilds.map((item) => (
-                <Product
-                  key={item.id}
-                  product={item}
-                  variant="development"
-                  language={language}
-                />
-              ))}
-            </div>
-          </section>
 
           <section className="pl-archive">
             <div className="pl-section-title pl-section-title--archive">
