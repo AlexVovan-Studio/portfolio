@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective November 11, 2026." />
+  <meta name="description" content="Privacy Policy for MyChatSense by AlexVovan Studio. Effective November 28, 2026." />
   <meta name="robots" content="index, follow" />
   <title>Privacy Policy - MyChatSense</title>
   <link rel="canonical" href="https://portfolio-alexvovan.vercel.app/my-chatsense-privacy-policy.html" />
@@ -162,7 +162,7 @@
     <article class="card">
       <h1>Privacy Policy for MyChatSense</h1>
 
-      <p class="updated"><strong>Effective date:</strong> November 11, 2026</p>
+      <p class="updated"><strong>Effective date:</strong> November 28, 2026</p>
 
       <p>MyChatSense (“the App”) is an Android companion app that helps users read and reply to WhatsApp conversations in another language and optionally save selected words, phrases, or sentences for language learning and practice. This Privacy Policy explains what information the App accesses, how it is processed, when it leaves the device, and what choices users have.</p>
 
@@ -170,7 +170,7 @@
 
       <p>MyChatSense is an independent application and is not affiliated with, endorsed by, or sponsored by WhatsApp LLC or Meta Platforms, Inc.</p>
 
-      <p>The App does not require a MyChatSense account. There is no MyChatSense registration, login, password, OAuth profile, advertising SDK, behavioral advertising, or third-party advertising/tracking SDK.</p>
+      <p>The App does not require a MyChatSense account. There is no MyChatSense registration, login, password or OAuth profile. The App does not display advertising or use behavioral advertising. Google SDKs used for translation and billing may process technical information as described below.</p>
 
       <h2>2. Accessibility Service</h2>
 
@@ -249,7 +249,7 @@
 
       <h2>4. Information Sent for Translation</h2>
 
-      <p>When the user requests or triggers translation, the relevant text must leave the device.</p>
+      <p>When an AI translation is requested or triggered, the relevant text is sent to the MyChatSense backend. On-device translation, described in Section 4A, uses a different processing method.</p>
 
       <p>This also applies when the user selects only part of a WhatsApp message for Learning and a translation of that selected fragment is needed. In that case, the selected fragment may be sent through the same translation flow described in this section.</p>
 
@@ -269,6 +269,12 @@
       <p>Sender information may initially contain a WhatsApp display name or, for an unsaved contact, a phone number as shown by WhatsApp. Before conversation context is sent onward to the AI translation provider, the MyChatSense backend replaces participant labels with neutral labels such as S1, S2, and similar pseudonymous identifiers. Names, phone numbers, and other identifying information written within the message text itself are not automatically removed.</p>
 
       <p>For translation of a selected Learning fragment, conversation context may be omitted when it is not needed for that request.</p>
+
+      <h2>4A. On-device Translation with Google ML Kit</h2>
+
+      <p>When the free AI translation allowance is exhausted, supported incoming text messages can be translated using Google ML Kit's on-device Translation API. Translation is performed on the device; the text and resulting translation are not sent to Google servers by the ML Kit Translation API or to the MyChatSense AI backend for that operation.</p>
+
+      <p>The required language models may be downloaded from Google. According to Google's ML Kit disclosures, the SDK may send technical information for diagnostics, usage measurement, maintenance and abuse prevention, including device and app information, installation identifiers, performance metrics, input and output sizes, language settings, model-download events and error codes. ML Kit also uses Firebase Remote Config and Firebase Installations for remote configuration diagnostics. See <a href="https://developers.google.com/ml-kit/terms">ML Kit Terms and Privacy</a>, <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit Android data disclosures</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
       <h2>5. AI Translation Provider</h2>
 
@@ -290,7 +296,11 @@
 
       <p>For abuse and cost protection, the backend stores short-lived per-minute and daily request counters. Per-client rate limiting uses a SHA-256 hash derived from the client network address. These counters do not contain WhatsApp message text or document images.</p>
 
-      <p>For each user-initiated photo or PDF translation page, the App sends a random installation identifier (UUID) and a separate random request identifier to the MyChatSense backend. The installation identifier is not derived from a Google account, email, IMEI, advertising ID, or other hardware identifier. It is sent for document translation even while Premium usage enforcement is disabled; during the current free closed test, it is not used to charge a per-installation AI quota.</p>
+      <p>MyChatSense generates a random installation identifier (UUID) that is not derived from a Google account, email, IMEI, advertising ID or another hardware identifier. With Premium usage enforcement enabled, the App sends this identifier to the backend to determine the available free AI translation allowance and paid-access status. AI translation requests, including individual photo/PDF page requests, also carry a request identifier so that retries do not consume the allowance twice.</p>
+
+      <p>The backend uses PostgreSQL to retain installation identifiers, usage counts, request identifiers, access status and processing timestamps. To support safe retries and prevent duplicate charging of the free allowance, it also saves completed AI translation responses associated with those identifiers. These responses can contain translated message text and, for photo/PDF translations, extracted original text and translated text. This is a request-result store, not a complete cloud archive of WhatsApp conversations.</p>
+
+      <p>The current backend does not implement automatic expiry of completed translation-response records or purchase and entitlement records. These records may therefore remain in server storage after the App has been cleared or uninstalled. Requests concerning their deletion can be made as described in Section 10.</p>
 
       <p>Technical infrastructure may also process IP addresses and ordinary network and operational metadata necessary to provide, secure, and troubleshoot the service.</p>
 
@@ -298,13 +308,23 @@
 
       <p>The backend forwards that report by email to the developer using the Resend email-delivery service. Feedback messages and their technical context may therefore be processed by Resend and retained in the developer’s email mailbox for as long as reasonably needed to investigate the reported problem, provide support, maintain service records, or meet applicable legal requirements. Users may contact the developer using the address in Section 13 with privacy questions or deletion requests concerning submitted feedback.</p>
 
+      <h2>6A. Premium Access, Google Play Billing and Refunds</h2>
+
+      <p>MyChatSense offers a limited free AI translation allowance and optional Premium access through Google Play. Subscription purchases, eligible complimentary access and purchase restoration use Google Play Billing. MyChatSense does not create a separate user account or use Google Sign-In for these features.</p>
+
+      <p>When a user purchases or restores access, the App sends the Google Play purchase token and relevant purchase information to the MyChatSense backend. The backend verifies the purchase with the Google Play Developer API and, where required, acknowledges it. The backend stores a SHA-256 hash of the purchase token, product and base-plan identifiers, entitlement state, relevant expiry dates and the association with the installation identifier. These records are used to grant or restore access, account for free usage and prevent misuse. The raw purchase token is processed for verification and is not stored as the entitlement identifier.</p>
+
+      <p>Google Play processes the payment, manages the user's payment account and subscription, and handles payment-related information under its own terms and privacy policy. MyChatSense does not receive the user's payment-card number, bank-account details or Google account password. Users can manage or cancel subscriptions through <a href="https://play.google.com/store/account/subscriptions">Google Play subscriptions</a>. Cancelling a subscription or uninstalling the App does not by itself erase purchase records.</p>
+
+      <p>Google Play may send real-time developer notifications through Google Cloud Pub/Sub concerning purchases, renewals, cancellations, expiry, refunds or other purchase-state changes. The backend stores notification identifiers, event information and, where applicable, a purchase-token hash to prevent duplicate processing and synchronize access with Google Play. A pending refund-review notification may additionally be recorded with its Google Play order ID, pending refund token and refund reason for review. Such a notification does not itself approve a refund or revoke access.</p>
+
       <h2>7. Photos, Videos, Documents, Voice Messages, Dictation, and Speech Features</h2>
 
       <p>MyChatSense does not upload the underlying WhatsApp binary media file merely because a selected chat contains a photo, video, PDF, or voice message.</p>
 
       <p><strong>Photo and PDF translation initiated by the user is different.</strong> When a user selects a photo or PDF in MyChatSense (including through Android’s Share menu) and taps Translate, the App converts the selected image or each PDF page into JPEG image data and sends it over HTTPS to the MyChatSense backend. The backend forwards the page image to OpenAI for text recognition and translation. Up to five PDF pages can be processed separately. The original PDF file is not uploaded as a PDF; its rendered page images are uploaded. Those images may contain personal or confidential information, so users should consider the contents before requesting translation.</p>
 
-      <p>The MyChatSense backend does not intentionally store uploaded document images as files. Extracted source text and translated text may be saved in the local cache described in Section 3. OpenAI’s processing and retention practices described in Section 5 apply to the transmitted images as well as text.</p>
+      <p>The MyChatSense backend does not intentionally store uploaded document images as files. Extracted source text and translated text may be retained in the local cache described in Section 3 and in the server-side request-result store described in Section 6. OpenAI’s processing and retention practices described in Section 5 apply to the transmitted images as well as text.</p>
 
       <p>When synchronizing an already selected WhatsApp conversation through Accessibility, rather than translating a separately selected file, the App may use only text that is visible in the WhatsApp interface, such as:</p>
 
@@ -324,15 +344,17 @@
 
       <h2>8. Service Providers</h2>
 
-      <p>To provide the translation service and optional problem-reporting feature, MyChatSense relies on service providers that process data on behalf of the App, including:</p>
+      <p>To provide the translation service, paid access and optional problem-reporting feature, MyChatSense uses the following services:</p>
 
       <ul>
-  <li>hosting/infrastructure used by the MyChatSense backend;</li>
-  <li>OpenAI API for AI-assisted translation; and</li>
+  <li>Railway for backend hosting and PostgreSQL storage;</li>
+  <li>OpenAI API for AI-assisted translation;</li>
+  <li>Google Play and Google Cloud Pub/Sub for purchases, verification and purchase-state notifications;</li>
+  <li>Google ML Kit and its supporting services for on-device translation models and technical diagnostics; and</li>
   <li>Resend for delivery of user-submitted problem reports to the developer by email.</li>
 </ul>
 
-      <p>These providers receive only the information needed to perform the relevant service.</p>
+      <p>MyChatSense sends information to these services for the purposes described in this policy. Google also processes information for its own payment and SDK operations under its applicable terms and privacy policies.</p>
 
       <p>MyChatSense does not sell personal data and does not use WhatsApp conversation content for advertising.</p>
 
@@ -352,7 +374,11 @@
 
       <p>To remove data stored in the App’s private storage, including cached photo/PDF translation results and the local installation identifier, clear its storage in Android settings or uninstall the App. Cached document results older than seven days are also removed when accessed or when the cache is pruned. Translated PDFs saved outside the App, diagnostic files exported to another location, or copies shared with others are outside the App’s private storage and must be removed separately.</p>
 
-      <p>Because MyChatSense does not require a user account, there is no MyChatSense account profile to delete.</p>
+      <p>Because MyChatSense does not require a user account, there is no MyChatSense account profile to delete. Clearing app storage or uninstalling the App does not cancel a Google Play subscription or automatically delete server-side installation, translation-request, purchase or refund-review records.</p>
+
+      <p>Users may contact the privacy email address in Section 13 to request access to, correction or deletion of personal data held by MyChatSense, or to exercise other applicable data-protection rights. Sufficient information may be needed to identify the relevant installation or purchase without disclosing unrelated personal information. Some records may need to be retained for legal obligations, payment disputes, refund handling, security or other lawful purposes. Google Play account and payment data must be managed through Google.</p>
+
+      <p>Where applicable, users also have the right to restrict or object to processing, request data portability, withdraw consent, and complain to the competent data-protection authority. Withdrawing permission for Accessibility or Notification Access stops the corresponding access; it does not automatically remove previously stored information.</p>
 
       <p>For privacy questions or requests concerning the service, users can contact AlexVovan Studio using the email address below.</p>
 
